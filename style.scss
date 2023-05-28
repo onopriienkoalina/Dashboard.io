@@ -1,0 +1,413 @@
+$mobile-max-width: 783px;
+
+html,
+body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.01em;
+  background-color: #FAFBFF;
+  font-size: 14px;
+  font-weight: 500;
+  @media (max-width: $mobile-max-width) {
+      font-size: 12px;
+    }
+}
+
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  @media (max-width: $mobile-max-width) {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__logo {
+    display: flex;
+    align-items: center;
+    background-image: url("../img/logo.svg");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 32px;
+  }
+
+  &__text-box {
+    display: flex;
+    align-items: baseline;
+    
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+    color: #000000;
+    margin: 0 0 0 42px;
+  }
+
+  &__text-v {
+    font-size: 10px;
+    margin: 0 0 0 4px;
+    color: #838383;
+  }
+
+  &__left-column {
+    min-width: 306px;
+    padding: 36px 28px 36px 28px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 0;
+    top: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $mobile-max-width) {
+      position: static;
+      height: 100%;
+      padding: 20px;
+      background-color: #FAFBFF;
+      order: -1;
+    }
+  }
+
+  &__menu {
+    margin: 65px 0 0 0;
+    @media (max-width: $mobile-max-width) {
+      margin: 10px 0 0 0;
+    }
+  }
+
+  &__menu-img {
+    width: 21px;
+    height: 21px;
+  }
+
+  &__menu-item {
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s ease;
+     &:hover {
+      background-color: #5932EA;
+      border-radius: 8px;
+      color: #FFFFFF;
+     }
+     &:not(:first-child) {
+        margin: 17px 0 0 0;
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          right: 14px;
+          width: 8px;
+          height: 8px;
+          border: solid #9197B3;
+          border-width: 0 2px 2px 0;
+          transform: rotate(-45deg);
+        }
+    }
+     &:hover::after {
+        border-color: white;
+    }
+    @media (max-width: $mobile-max-width) {
+      max-width: auto;
+      margin: 0;
+    }
+  }
+
+  &__menu-item:hover .dashboard__menu-img {
+    filter: brightness(0) invert(1);
+    color: #FFFFFF;
+  }
+
+  &__menu-item:hover .dashboard__menu-link {
+  color: #FFFFFF;
+  }
+
+  &__menu-link {
+    color: #9197B3;  
+    padding: 0 14px;
+    line-height: 21px;
+    font-size: 14px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    @media (max-width: $mobile-max-width) {
+      margin: 20px 0 0 0;
+    }
+  }
+
+  &__user-img {
+    background-image: url("../img/Ellipse.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 42px;
+  }
+
+  &__user-text {
+    margin: 0 0 0 12px;
+  }
+
+  &__user-name{
+    font-size: 14px;
+  }
+
+  &__user-position {
+     font-size: 12px;
+     color: #757575;
+     font-weight: 400;
+  }
+
+  &__right-column {
+    padding: 41px 95px 0 377px;
+    @media (max-width: 1090px) {
+      padding: 50px 20px 20px 325px;
+    }
+    @media (max-width: $mobile-max-width) {
+      padding: 0 20px 0 20px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    @media (max-width: $mobile-max-width) {
+      display: none;
+    }
+  }
+
+  &__box {
+    padding: 30px 44px 40px 38px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+    border-radius: 30px;
+    margin: 51px 0 0 0;
+    position: relative;
+    @media (min-width: $mobile-max-width) and (max-width: 1090px) {
+      padding: 20px;
+    }
+    @media (max-width: $mobile-max-width) {
+      padding: 10px;
+      box-shadow: none;
+      border-radius: none;
+      margin: 0;
+    }
+  }
+
+  &__customers {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    @media (max-width: $mobile-max-width) {
+      font-size: 16px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    @media (max-width: $mobile-max-width) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__members {
+    color: #16C098;
+    margin: 7px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    @media (max-width: $mobile-max-width) {
+      font-size: 14px;
+    }
+  }
+
+  &__search-container {
+    min-width: 216px;
+    display: flex;
+    align-content: center;
+    background-color: #F9FBFF;
+    border-radius: 10px;
+    padding: 10px;
+    @media (max-width: $mobile-max-width) {
+      margin: 20px 0 0 0;
+      width: 100%;
+    }
+  }
+
+  &__search-icon {
+    background-image: url("../img/search.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__input {
+    background-color: #F9FBFF;
+    line-height: 24px;
+    margin: 0 0 0 13px;
+  }
+
+  &__search-label {
+    color: #B5B7C0;
+    font-size: 12px;
+    margin: 0 0 0 13px;
+    line-height: 24px;
+  }
+
+  &__table {
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 14px;
+    @media (max-width: $mobile-max-width) {
+      font-weight: 300;
+      font-size: 12px;
+      margin: 0;
+    }
+  
+    &-head {
+      color: #B5B7C0;
+      text-align: left;
+      &_col {
+        padding: 0 10px 0 0;
+      @media (max-width: $mobile-max-width) {
+        font-weight: 300;
+        font-size: 12px;
+      }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid #EEEEEE;
+        padding: 14px 0 0 0;
+      }
+      &_col:last-of-type {
+        text-align: center;
+      }
+    }
+
+    &-col {
+        padding: 24px 20px 24px 0;
+        border-bottom: 1px solid #EEEEEE;
+        &:last-child {
+          text-align: right;
+          padding: 24px 0 24px 0;
+          position: relative;
+        } 
+        @media (max-width: $mobile-max-width) {
+          padding: 14px 10px 14px 0;
+        }
+      }
+      
+      &-row:first-child th,
+      &-row:first-child td {
+        padding-top: 40px;
+        @media (max-width: $mobile-max-width) {
+          padding-top: 30px;
+        }
+      }
+    
+    &-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 21px;
+      margin-left: auto;
+      padding: 4px 16px;
+      border-radius: 4px;
+    }
+  }
+  
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 0 0;
+    @media (max-width: $mobile-max-width) {
+      flex-direction: column;
+      margin: 10px 0 0 0;
+    }
+
+    &-text {
+      color: #B5B7C0;
+      font-size: 14px;     
+      @media (max-width: $mobile-max-width) {
+        font-size: 10px;
+       }
+    }
+
+    &-arrow {
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 8px;
+      height: 12px;
+    }
+
+    &-arrow_back {
+      background-image: url("../img/arrow-back.svg");
+    }
+
+    &-arrow_next {
+      background-image: url("../img/arrow-next.svg");
+    }
+
+    &-pagination{
+      display: flex;
+      @media (max-width: 850px) {
+        margin: 10px 0 0 0;
+      }
+    }
+
+    &-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #F5F5F5;
+      border: 1px solid #EEEEEE;
+      border-radius: 4px;
+      margin: 0 12px 0 0;
+      width: 25px;
+      height: 24px;
+      font-size: 12px;
+      color: #404B52;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background: #5932EA;
+        color: #FFFFFF;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      @media (max-width: $mobile-max-width) {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+      }
+    }
+
+    &-page:hover .dashboard__footer-arrow {
+      filter: brightness(0) invert(1);
+    }
+
+    &-dots {
+      margin: 8px 12px 0 0;
+      font-size: 12px;
+    }
+  }
+}
+
